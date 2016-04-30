@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+<script src="ctrl1.js"></script>
+<script src="listController.js"></script>
+<body>
+
+<div ng-app="app1">
+	<div ng-controller="ctrl1">
+	 	<p>Name : <input type="text" ng-model="name"></p>
+	 	<h1>Hello {{name}}</h1>
+ 	</div>
+ 	<div ng-controller="listController">
+ 		<li ng-repeat="p in people | orderBy:'id'">
+ 			<button ng-click="nameChosen(p)"> 
+	 			{{ p.name + " " + p.surname }}	
+ 			</button>	
+ 		</li>
+ 		<span ng-show="chosen"/>
+ 			<input ng-model="chosen.name"/>
+ 			<button ng-click="updateChosen()">update</button>
+ 		</span>
+ 	</div>
+</div>
+
+</body>
+</html>

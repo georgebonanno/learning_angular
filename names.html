@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="angular.min.js"></script>
+<script src="app2.js"></script>
+<script src="nameController.js"></script>
+<body>
+
+<div ng-app="app2" ng-controller="nameController">
+	<table>
+		<tr>
+			<th ng-click="orderByAttr('name')">name
+			</th>
+			<th ng-click="orderByAttr('country')">surname
+			</th>
+		</tr>
+		<tr ng-repeat="n in names | orderBy:sortingByAttr">
+			<td>{{ n.name }}</td>
+			<td>{{ n.country }}</td>
+		<tr>
+	</table>
+</div>
+
+</body>
+</html>
